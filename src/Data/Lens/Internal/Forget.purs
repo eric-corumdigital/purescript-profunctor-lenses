@@ -42,3 +42,6 @@ instance cochoiceForget :: Cochoice (Forget r) where
 
 instance wanderForget :: Monoid r => Wander (Forget r) where
   wander f (Forget r) = Forget (alaF Const f r)
+
+instance semigroupoidForget :: Semigroupoid (Forget r) where
+  compose _ (Forget f) = Forget f
